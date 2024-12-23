@@ -109,7 +109,7 @@ def _install_sandboxed_node() -> Path:
 
     env_dir = client_dir / ".nodeenv"
     subprocess.run(
-        [sys.executable, "-m", "nodeenv", "--node=20.4.0", env_dir], check=False
+        [sys.executable, "-m", "nodeenv", "--with-npm", "--node=20.4.0", env_dir], check=False
     )
 
     node_bin_dir = get_node_bin_dir()

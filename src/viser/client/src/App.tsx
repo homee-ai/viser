@@ -15,7 +15,9 @@ import {
 import * as THREE from "three";
 import { Canvas, useThree, useFrame } from "@react-three/fiber";
 
-import { SynchronizedCameraControls } from "./CameraControls";
+// import { SynchronizedCameraControls } from "./CameraControls";
+import { CameraPointerLockControls } from "./CameraPointerLockControls";
+
 import {
   Anchor,
   Box,
@@ -291,7 +293,8 @@ function ViewerCanvas({ children }: { children: React.ReactNode }) {
 
   // Make sure we don't re-mount the camera controls, since that will reset the camera position.
   const memoizedCameraControls = React.useMemo(
-    () => <SynchronizedCameraControls />,
+    // () => <SynchronizedCameraControls />,
+    () => < CameraPointerLockControls />,
     [],
   );
 
